@@ -317,7 +317,7 @@ namespace Unity.XR.Oculus.Input
     /// Use OculusGoController instead if targeting the Oculus Go.
     /// </remarks>
     [Preserve]
-    [InputControlLayout(hideInUI = true, displayName = "GearVR Controller", commonUsages = new[] { "LeftHand", "RightHand" })]
+    [InputControlLayout(hideInUI = false, displayName = "GearVR Controller", commonUsages = new[] { "LeftHand", "RightHand" })]
     public class GearVRTrackedController : XRController
     {
         [Preserve]
@@ -330,34 +330,35 @@ namespace Unity.XR.Oculus.Input
         [InputControl]
         public ButtonControl back { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "indexButton")]
         public ButtonControl triggerPressed { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "touchpadClick")]
         public ButtonControl touchpadClicked { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "touchpadTouch")]
         public ButtonControl touchpadTouched { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "controllerTrackingState")]
         public new IntegerControl trackingState { get; private set; }
         [Preserve]
         [InputControl]
         public new ButtonControl isTracked { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "remoteControllerPosition")]
         public new Vector3Control devicePosition { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "remoteControllerRotation")]
         public new QuaternionControl deviceRotation { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "remoteControllerAngularVelocity")]
         public Vector3Control deviceAngularVelocity { get; private set; }
         [Preserve]
         [InputControl]
+        [InputControl(alias = "remoteControllerAcceleration")]
         public Vector3Control deviceAcceleration { get; private set; }
         [Preserve]
-        [InputControl]
+        [InputControl(alias = "remoteControllerAngularAcceleration")]
         public Vector3Control deviceAngularAcceleration { get; private set; }
 
         protected override void FinishSetup()
